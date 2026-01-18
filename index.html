@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+
+  <link rel="stylesheet" href="exp.css">
+</head>
+
+<body data-theme="light">
+
+<div class="dashboard">
+
+  
+  <aside class="sidebar">
+    <div class="logo">
+      <h2>Admin</h2>
+    </div>
+
+    <ul class="nav">
+      <li class="active">
+        <i class="fa-solid fa-house"></i>
+        <span>Dashboard</span>
+      </li>
+      <li>
+        <i class="fa-solid fa-chart-line"></i>
+        <span>Analytics</span>
+      </li>
+      <li>
+        <i class="fa-solid fa-user"></i>
+        <span>Users</span>
+      </li>
+      <li>
+        <i class="fa-solid fa-gear"></i>
+        <span>Settings</span>
+      </li>
+    </ul>
+
+    <div class="profile">
+      <img src="admin.jpg" alt="Admin" height="50px">
+      <div>
+        <strong>Admin</strong>
+        <p>admin@gmail.com</p>
+      </div>
+    </div>
+  </aside>
+
+  <main class="main">
+    <header class="header">
+      <h1>Dashboard</h1>
+      <button id="themeToggle">🌙</button>
+    </header>
+
+    <section class="cards">
+      <div class="card">Users<br></div>
+      <div class="card">Sales<br></div>
+      <div class="card">Orders<br></div>
+    </section>
+
+    <section class="content">
+      <div class="card large">Recent Activity</div>
+      <div class="card large">Statistics</div>
+    </section>
+  </main>
+
+</div>
+
+<script>
+  const toggleBtn = document.getElementById("themeToggle");
+  const body = document.body;
+
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme) {
+    body.setAttribute("data-theme", savedTheme);
+    toggleBtn.textContent = savedTheme === "dark" ? "☀️" : "🌙";
+  }
+
+  toggleBtn.addEventListener("click", () => {
+    const theme = body.getAttribute("data-theme") === "light" ? "dark" : "light";
+    body.setAttribute("data-theme", theme);
+    localStorage.setItem("theme", theme);
+    toggleBtn.textContent = theme === "dark" ? "☀️" : "🌙";
+  });
+</script>
+
+</body>
+</html>
