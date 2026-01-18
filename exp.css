@@ -1,0 +1,134 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+body {
+  background-color: whitesmoke;
+  color: midnightblue;
+}
+.dashboard {
+  display: grid;
+  grid-template-columns: 230px 1fr;
+  min-height: 100vh;
+}
+.sidebar {
+  background-color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.logo h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.nav {
+  list-style: none;
+}
+.nav li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 15px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+.nav li i {
+  font-size: 16px;
+}
+.nav li:hover {
+  background-color: lavender;
+  color: royalblue;
+}
+.nav li.active {
+  background-color: royalblue;
+  color: white;
+}
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-top: 15px;
+  border-top: 1px solid lightgray;
+  font-size: 13px;
+}
+.profile img {
+  border-radius: 50%;
+}
+.profile p {
+  font-size: 12px;
+  color: gray;
+}
+.main {
+  padding: 20px;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  background-color: royalblue;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+button:hover {
+  background-color: dodgerblue;
+}
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-bottom: 20px;
+}
+.card {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+.content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.large {
+  height: 200px;
+}
+body[data-theme="light"] {
+  background-color: whitesmoke;
+  color: rgb(52, 52, 57);
+}
+body[data-theme="light"] .sidebar,
+body[data-theme="light"] .card {
+  background-color: white;
+}
+body[data-theme="dark"] {
+  background-color: rgb(52, 52, 57);
+  color: white;
+}
+body[data-theme="dark"] .sidebar {
+  background-color: black;
+}
+body[data-theme="dark"] .card {
+  background-color: darkslategray;
+}
+body[data-theme="dark"] .nav li:hover {
+  background-color: steelblue;
+}
+body[data-theme="dark"] button {
+  background-color: skyblue;
+}
